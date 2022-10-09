@@ -1,6 +1,9 @@
 resource "aws_iam_instance_profile" "assume-role-ec2" {
   name = "assume-role-ec2"
   role = aws_iam_role.role-ec2.id
+  tags = {
+    yor_trace = "5956ebd5-949e-47f3-9cd7-09a2a6a9aca9"
+  }
 }
 
 resource "aws_iam_role" "role-ec2" {
@@ -26,6 +29,9 @@ resource "aws_iam_role" "role-ec2" {
 }
 EOF
 
+  tags = {
+    yor_trace = "8c67d686-75fe-4c2c-a76f-9c77d6af5a66"
+  }
 }
 
 resource "aws_iam_role_policy" "role-ec2-policy" {
